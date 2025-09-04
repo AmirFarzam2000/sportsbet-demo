@@ -4,12 +4,11 @@ import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useTranslation } from 'react-i18next';
 import { useRTL } from '../contexts/RTLContext';
+import { NavigationItem } from '@/types';
 
-interface SidebarItem {
+interface SidebarItem extends NavigationItem {
   key: string;
-  label: string;
   icon: React.ReactNode;
-  href?: string;
 }
 
 interface SidebarProps {
@@ -31,7 +30,7 @@ export default function Sidebar({ items, activeItem }: SidebarProps) {
     <>
       {/* Mobile toggle button */}
       <button
-        className={`lg:hidden fixed top-20 z-50 p-3 text-white bg-[#242424] rounded-lg shadow-lg ${
+        className={`lg:hidden fixed top-20 z-50 p-3 text-gray-700 dark:text-white bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg theme-transition ${
           isRTL ? 'right-4' : 'left-4'
         }`}
         onClick={() => setOpen(!open)}
@@ -43,10 +42,10 @@ export default function Sidebar({ items, activeItem }: SidebarProps) {
       <aside
         suppressHydrationWarning
         className={twMerge(
-          `fixed top-0 h-full w-64 bg-[#1a1a1a] text-white transition-transform z-40 ${
+          `fixed top-0 h-full w-64 bg-white dark:bg-[#1a1a1a] text-gray-900 dark:text-white transition-transform z-40 theme-transition ${
             isRTL
-              ? 'right-0 border-l border-[#333]'
-              : 'left-0 border-r border-[#333]'
+              ? 'right-0 border-l border-gray-200 dark:border-[#333]'
+              : 'left-0 border-r border-gray-200 dark:border-[#333]'
           }`,
           open
             ? 'translate-x-0'
@@ -57,7 +56,7 @@ export default function Sidebar({ items, activeItem }: SidebarProps) {
         )}
       >
         <div
-          className={`p-6 border-b border-[#333] ${isRTL ? 'text-right' : 'text-left'}`}
+          className={`p-6 border-b border-gray-200 dark:border-[#333] ${isRTL ? 'text-right' : 'text-left'}`}
         >
           <h2
             className={`font-bold text-xl text-yellow-500 ${
@@ -80,7 +79,7 @@ export default function Sidebar({ items, activeItem }: SidebarProps) {
                     }`,
                     activeItem === item.key
                       ? 'bg-yellow-500 text-black font-semibold shadow-lg'
-                      : 'text-gray-300 hover:bg-[#2a2a2a] hover:text-white'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-[#2a2a2a] hover:text-gray-900 dark:hover:text-white'
                   )}
                 >
                   <span className="text-xl">{item.icon}</span>
@@ -99,13 +98,13 @@ export default function Sidebar({ items, activeItem }: SidebarProps) {
 
         {/* Quick Stats */}
         <div
-          className={`p-4 border-t border-[#333] mt-auto ${
+          className={`p-4 border-t border-gray-200 dark:border-[#333] mt-auto ${
             isRTL ? 'text-right' : 'text-left'
           }`}
         >
-          <div className="bg-[#2a2a2a] rounded-lg p-4">
+          <div className="bg-gray-100 dark:bg-[#2a2a2a] rounded-lg p-4">
             <h3
-              className={`text-white font-semibold mb-3 ${
+              className={`text-gray-900 dark:text-white font-semibold mb-3 ${
                 isRTL ? 'text-right' : 'text-left'
               }`}
             >
@@ -117,7 +116,9 @@ export default function Sidebar({ items, activeItem }: SidebarProps) {
                   isRTL ? 'flex-row-reverse' : 'flex-row'
                 }`}
               >
-                <span className="text-gray-400">{t('football')}</span>
+                <span className="text-gray-600 dark:text-gray-400">
+                  {t('football')}
+                </span>
                 <span className="text-red-500 font-semibold">3</span>
               </div>
               <div
@@ -125,7 +126,9 @@ export default function Sidebar({ items, activeItem }: SidebarProps) {
                   isRTL ? 'flex-row-reverse' : 'flex-row'
                 }`}
               >
-                <span className="text-gray-400">{t('tennis')}</span>
+                <span className="text-gray-600 dark:text-gray-400">
+                  {t('tennis')}
+                </span>
                 <span className="text-red-500 font-semibold">1</span>
               </div>
               <div
@@ -133,7 +136,9 @@ export default function Sidebar({ items, activeItem }: SidebarProps) {
                   isRTL ? 'flex-row-reverse' : 'flex-row'
                 }`}
               >
-                <span className="text-gray-400">{t('basketball')}</span>
+                <span className="text-gray-600 dark:text-gray-400">
+                  {t('basketball')}
+                </span>
                 <span className="text-red-500 font-semibold">0</span>
               </div>
             </div>
