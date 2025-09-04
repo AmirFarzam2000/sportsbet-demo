@@ -1,27 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* RTL Support */
+.rtl {
+  direction: rtl;
+  text-align: right;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.ltr {
+  direction: ltr;
+  text-align: left;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* RTL specific adjustments */
+.rtl input {
+  text-align: right;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.rtl .text-left {
+  text-align: right;
+}
+
+.rtl .text-right {
+  text-align: left;
+}
+
+/* LTR specific adjustments */
+.ltr input {
+  text-align: left;
+}
+
+.ltr .text-left {
+  text-align: left;
+}
+
+.ltr .text-right {
+  text-align: right;
 }
