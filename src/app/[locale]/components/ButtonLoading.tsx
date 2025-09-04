@@ -1,9 +1,5 @@
 'use client';
-
-interface ButtonLoadingProps {
-  size?: 'sm' | 'md' | 'lg';
-  color?: 'primary' | 'secondary' | 'white';
-}
+import { ButtonLoadingProps } from '@/types';
 
 export default function ButtonLoading({
   size = 'sm',
@@ -17,8 +13,8 @@ export default function ButtonLoading({
 
   const colorClasses = {
     primary: 'border-yellow-500',
-    secondary: 'border-blue-500',
     white: 'border-white',
+    dark: 'border-gray-800',
   };
 
   return (
