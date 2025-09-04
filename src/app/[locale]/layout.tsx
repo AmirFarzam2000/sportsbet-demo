@@ -54,18 +54,18 @@ export default function MainLayout({
       <div suppressHydrationWarning>
         {/* <DynamicI18n locale={params.locale}> */}
         <Header />
-        <div className="flex min-h-screen bg-[#141414]">
+        <div className="flex min-h-screen bg-gray-50 dark:bg-[#141414] theme-transition">
           <Sidebar
             title="Sports Categories"
             items={[
-              { key: 'football', label: 'Football', icon: '⚽' },
-              { key: 'tennis', label: 'Tennis', icon: '🎾' },
-              { key: 'basketball', label: 'Basketball', icon: '🏀' },
-              { key: 'hockey', label: 'Hockey', icon: '🏒' },
-              { key: 'volleyball', label: 'Volleyball', icon: '🏐' },
-              { key: 'handball', label: 'Handball', icon: '🤾' },
-              { key: 'darts', label: 'Darts', icon: '🎯' },
-              { key: 'baseball', label: 'Baseball', icon: '⚾' },
+              { key: 'football', label: 'Football', icon: '⚽', href: '#' },
+              { key: 'tennis', label: 'Tennis', icon: '🎾', href: '#' },
+              { key: 'basketball', label: 'Basketball', icon: '🏀', href: '#' },
+              { key: 'hockey', label: 'Hockey', icon: '🏒', href: '#' },
+              { key: 'volleyball', label: 'Volleyball', icon: '🏐', href: '#' },
+              { key: 'handball', label: 'Handball', icon: '🤾', href: '#' },
+              { key: 'darts', label: 'Darts', icon: '🎯', href: '#' },
+              { key: 'baseball', label: 'Baseball', icon: '⚾', href: '#' },
             ]}
             activeItem="football"
           />
