@@ -14,12 +14,12 @@ export default function Home() {
     <LoadingWrapper>
       <div className="space-y-8">
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-2xl p-8 overflow-hidden">
+        <div className="relative bg-gradient-to-r from-gray-100 to-gray-200 dark:from-[#1a1a1a] dark:to-[#2a2a2a] rounded-2xl p-8 overflow-hidden theme-transition">
           <div className="relative z-10">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               Welcome to <span className="text-yellow-500">SportsBet</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-6 max-w-2xl">
+            <p className="text-xl text-gray-700 dark:text-gray-300 mb-6 max-w-2xl">
               Discover the best odds and place your bets on your favorite
               sports. From football to tennis, we&apos;ve got you covered with
               competitive odds.
