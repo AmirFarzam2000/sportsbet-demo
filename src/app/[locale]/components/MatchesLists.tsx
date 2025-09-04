@@ -67,7 +67,7 @@ export default function MatchList() {
             className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
               selectedSport === sport.key
                 ? 'bg-yellow-500 text-black shadow-lg'
-                : 'bg-[#2a2a2a] text-white hover:bg-[#3a3a3a]'
+                : 'bg-gray-200 dark:bg-[#2a2a2a] text-gray-900 dark:text-white hover:bg-gray-300 dark:hover:bg-[#3a3a3a]'
             }`}
           >
             <span className="text-lg">{sport.icon}</span>
@@ -77,7 +77,7 @@ export default function MatchList() {
       </div>
 
       {/* Content Tabs */}
-      <div className="flex gap-4 border-b border-[#333]">
+      <div className="flex gap-4 border-b border-gray-200 dark:border-[#333]">
         {tabs.map((tab) => (
           <button
             key={tab.key}
@@ -85,7 +85,7 @@ export default function MatchList() {
             className={`pb-2 px-1 font-medium transition-colors duration-200 ${
               selectedTab === tab.key
                 ? 'text-yellow-500 border-b-2 border-yellow-500'
-                : 'text-gray-400 hover:text-white'
+                : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
             }`}
           >
             {tab.label}
@@ -95,7 +95,7 @@ export default function MatchList() {
 
       {/* Results Count */}
       {searchQuery && (
-        <div className="text-gray-400 text-sm">
+        <div className="text-gray-600 dark:text-gray-400 text-sm">
           Found {filteredMatches.length} matches for &quot;{searchQuery}&quot;
         </div>
       )}
@@ -110,7 +110,7 @@ export default function MatchList() {
       ) : (
         <div className="text-center py-12">
           <div className="text-gray-400 text-lg mb-2">🏟️</div>
-          <p className="text-gray-400">
+          <p className="text-gray-600 dark:text-gray-400">
             {searchQuery
               ? t('noMatches')
               : selectedTab === 'live'
@@ -122,7 +122,7 @@ export default function MatchList() {
 
       {/* Popular Leagues Section */}
       <div className="mt-12">
-        <h2 className="text-white text-xl font-bold mb-6">
+        <h2 className="text-gray-900 dark:text-white text-xl font-bold mb-6">
           {t('popularLeagues')}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
