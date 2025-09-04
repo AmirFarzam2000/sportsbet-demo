@@ -1,16 +1,6 @@
 'use client';
 import React from 'react';
-
-interface StatsCardProps {
-  title: string;
-  value: string;
-  icon: string;
-  trend?: {
-    value: number;
-    isPositive: boolean;
-  };
-  color: 'green' | 'blue' | 'yellow' | 'purple';
-}
+import { StatsCardProps } from '@/types';
 
 export default function StatsCard({
   title,
@@ -35,7 +25,7 @@ export default function StatsCard({
   };
 
   return (
-    <div className="bg-[#1a1a1a] rounded-xl p-6 border border-[#333] hover:border-[#555] transition-all duration-200 hover:scale-105">
+    <div className="bg-white dark:bg-[#1a1a1a] rounded-xl p-6 border border-gray-200 dark:border-[#333] hover:border-gray-300 dark:hover:border-[#555] transition-all duration-200 hover:scale-105 theme-transition">
       <div className="flex items-center justify-between mb-4">
         <div
           className={`w-12 h-12 rounded-lg bg-gradient-to-br ${getColorClasses()} flex items-center justify-center text-2xl`}
@@ -52,8 +42,12 @@ export default function StatsCard({
         )}
       </div>
 
-      <h3 className="text-gray-400 text-sm font-medium mb-2">{title}</h3>
-      <p className="text-2xl font-bold text-white">{value}</p>
+      <h3 className="text-gray-600 dark:text-gray-400 text-sm font-medium mb-2">
+        {title}
+      </h3>
+      <p className="text-2xl font-bold text-gray-900 dark:text-white">
+        {value}
+      </p>
     </div>
   );
 }
