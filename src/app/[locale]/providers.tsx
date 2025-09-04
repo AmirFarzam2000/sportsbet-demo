@@ -7,6 +7,7 @@ import resourcesToBackend from 'i18next-resources-to-backend';
 import { getOptions } from '../i18n';
 import { ReactNode, useEffect, useState } from 'react';
 import { RTLProvider } from './contexts/RTLContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { Provider } from 'react-redux';
 import { store } from '@/store';
 
@@ -50,16 +51,20 @@ export default function Providers({
   if (!isClient || !instance) {
     return (
       <Provider store={store}>
-        <div suppressHydrationWarning>{children}</div>
+        <ThemeProvider>
+          <div suppressHydrationWarning>{children}</div>
+        </ThemeProvider>
       </Provider>
     );
   }
 
   return (
     <Provider store={store}>
-      <I18nextProvider i18n={instance}>
-        <RTLProvider locale={locale}>{children}</RTLProvider>
-      </I18nextProvider>
+      <ThemeProvider>
+        <I18nextProvider i18n={instance}>
+          <RTLProvider locale={locale}>{children}</RTLProvider>
+        </I18nextProvider>
+      </ThemeProvider>
     </Provider>
   );
 }
