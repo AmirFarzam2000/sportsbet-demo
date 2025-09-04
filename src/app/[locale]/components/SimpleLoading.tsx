@@ -25,7 +25,7 @@ export default function SimpleLoading({
     <div className="flex items-center justify-center">
       <div className={`${sizeClasses[size]} animate-spin`}>
         <div
-          className={`w-full h-full border-4 border-gray-200 border-t-${colorClasses[color]} rounded-full`}
+          className={`w-full h-full border-4 border-gray-300 dark:border-gray-200 border-t-${colorClasses[color]} rounded-full`}
         ></div>
       </div>
     </div>
