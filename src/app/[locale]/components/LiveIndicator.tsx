@@ -13,7 +13,11 @@ export default function LiveIndicator({
   time,
 }: LiveIndicatorProps) {
   if (!isLive) {
-    return <div className="text-gray-400 text-xs text-center">{time}</div>;
+    return (
+      <div className="text-gray-600 dark:text-gray-400 text-xs text-center">
+        {time}
+      </div>
+    );
   }
 
   return (
@@ -25,7 +29,9 @@ export default function LiveIndicator({
       {score !== undefined && (
         <div className="text-red-500 text-xs font-bold">{score}</div>
       )}
-      {time && <div className="text-gray-400 text-xs">{time}</div>}
+      {time && (
+        <div className="text-gray-600 dark:text-gray-400 text-xs">{time}</div>
+      )}
     </div>
   );
 }
